@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backpropagation - ML for Beginners</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="backpropagation.html">Backpropagation</a></li>
+                <li><a href="ai-potential.html">AI Potential</a></li>
+                <li><a href="ai-risks.html">AI Risks</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Backpropagation: The Heart of Neural Networks</h1>
+        <p>Backpropagation is an essential algorithm in machine learning and deep learning. It is used to minimize the error (or loss) by adjusting the weights of the neural network through a process called gradient descent.</p>
+
+        <h2>What is Backpropagation?</h2>
+        <p>Backpropagation is the key to training artificial neural networks. It allows the network to learn from the errors it makes by propagating the error backward through the network to update the weights and biases.</p>
+        
+        <p>The process involves two major steps:</p>
+        <ul>
+            <li><strong>Forward Propagation:</strong> The input data is passed through the network layers to generate predictions.</li>
+            <li><strong>Backward Propagation:</strong> The error is calculated, and the weights and biases are adjusted based on the error gradient.</li>
+        </ul>
+
+        <h2>How Does Backpropagation Work?</h2>
+        <p>Here’s a simplified step-by-step breakdown of how backpropagation works:</p>
+        <ol>
+            <li>Initialize the network weights and biases.</li>
+            <li>Perform a forward pass through the network to calculate the output.</li>
+            <li>Compute the loss by comparing the output to the expected value.</li>
+            <li>Calculate the gradient of the loss function with respect to each weight using the chain rule.</li>
+            <li>Adjust the weights by subtracting the gradient multiplied by the learning rate (gradient descent).</li>
+            <li>Repeat the process for multiple iterations (epochs) until the network converges to an optimal set of weights.</li>
+        </ol>
+
+        <h2>Interactive Demo</h2>
+        <p>Use the interactive demo below to visualize how backpropagation works. (Coming soon!)</p>
+        <div id="backpropagation-demo">
+            <button id="runDemo">Run Backpropagation Demo</button>
+        </div>
+
+        <p><strong>Note:</strong> The demo will simulate the process of adjusting weights during training a neural network.</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 ML for Beginners</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
