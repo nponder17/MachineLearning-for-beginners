@@ -1,5 +1,7 @@
 document.getElementById("runDemo").addEventListener("click", function () {
-    const log = document.getElementById("backpropagation-demo");
+    const log = document.getElementById("demoOutput");
+    log.innerText = "Backpropagation demo triggered!";
+
 
     // Simple neural net weights & input (simulate 1 step)
     let weights = [0.5, -0.5]; // Example weights
