@@ -44,7 +44,8 @@ document.getElementById("runDemo").addEventListener("click", function () {
 });
 
 // Helper functions
-function drawNeuron(svg, x, y) {
+function drawNeuron(svg, x, y, label = "") {
+    // Draw circle
     const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
     circle.setAttribute("cx", x);
     circle.setAttribute("cy", y);
@@ -52,7 +53,21 @@ function drawNeuron(svg, x, y) {
     circle.setAttribute("stroke", "#0f0");
     circle.setAttribute("fill", "#111");
     svg.appendChild(circle);
+
+    // Add label text
+    if (label) {
+        const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+        text.setAttribute("x", x);
+        text.setAttribute("y", y + 5); // slight vertical adjust
+        text.setAttribute("text-anchor", "middle");
+        text.setAttribute("fill", "#0f0");
+        text.setAttribute("font-size", "12px");
+        text.setAttribute("font-family", "monospace");
+        text.textContent = label;
+        svg.appendChild(text);
+    }
 }
+
 
 function drawConnection(svg, from, to, weight) {
     const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
@@ -63,4 +78,17 @@ function drawConnection(svg, from, to, weight) {
     line.setAttribute("stroke", weight > 0 ? "lime" : "red");
     line.setAttribute("stroke-width", Math.abs(weight * 5));
     svg.appendChild(line);
+
+    // Add weight label near midpoint
+    const midX = (from.x + to.x) / 2;
+    const midY = (from.y + to.y) / 2;
+
+    const weightLabel = document.createElementNS("http://www.w3.org/2000/svg", "text");
+    weightLabel.setAttribute("x", midX + 5);
+    weightLabel.setAttribute("y", midY - 5);
+    weightLabel.setAttribute("fill", "#0f0");
+    weightLabel.setAttribute("font-size", "12px");
+    weightLabel.setAttribute("font-family", "monospace");
+    weightLabel.textContent = weight.toFixed(2);
+    svg.appendChild(weightLabel);
 }
