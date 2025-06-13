@@ -18,8 +18,9 @@ document.getElementById("runDemo").addEventListener("click", function () {
     };
 
     // Draw neurons
-    neurons.input.forEach(n => drawNeuron(svg, n.x, n.y));
-    neurons.output.forEach(n => drawNeuron(svg, n.x, n.y));
+    drawNeuron(svg, neurons.input[0].x, neurons.input[0].y, "1");
+    drawNeuron(svg, neurons.input[1].x, neurons.input[1].y, "0");
+    drawNeuron(svg, neurons.output[0].x, neurons.output[0].y, "?");
 
     // Draw weighted lines (connections)
     for (let i = 0; i < neurons.input.length; i++) {
