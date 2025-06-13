@@ -1,8 +1,15 @@
 #backpropagation-demo {
     margin-top: 20px;
-    padding: 10px;
+    padding: 20px;
     background-color: #111;
     color: #0f0;
-    border-radius: 10px;
     font-family: monospace;
+    border-radius: 10px;
   }
+  
+  svg {
+    margin-top: 10px;
+    background: #222;
+    border-radius: 10px;
+  }
+  
